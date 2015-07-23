@@ -52,6 +52,7 @@ class DbbookreviewSpider(scrapy.Spider):
         i['author'] = soup.find_all("span", property="v:reviewer")[0].get_text()
         i['author_link'] = soup.find_all("span", class_="pl2")[0].a.get('href')
         i['book_link'] = soup.find_all("span", class_="pl2")[0].a.find_next('a').get('href')
+        #print(i['title'])
         return i
 
         # 爬取下一个
